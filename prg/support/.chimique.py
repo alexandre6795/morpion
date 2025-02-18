@@ -76,7 +76,7 @@ if None not in file_paths:
             offset_y += 200
 
     # Pause entre les deux boucles
-    time.sleep(5)
+    time.sleep(2)
 
     # Deuxième boucle pour .text2.txt
     offset_x = 0  # Réinitialiser le décalage
