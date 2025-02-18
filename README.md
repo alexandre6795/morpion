@@ -4,7 +4,8 @@ Voici comment tu peux télécharger et cloner le jeu de morpion :
 
 ### Étape 1 : Télécharger le code
 1. Clique sur l'image ci-dessous pour accéder au dépôt Git du projet :  
-   ![Code](img/code.png)
+   [![Code](img/code.png)](https://www.google.fr)
+
 
 ### Étape 2 : Accéder au fichier source
 2. Après ça, clique sur l'image suivante pour aller à la section du code ou fichier à télécharger :  
