@@ -1,5 +1,28 @@
 # 🎮 Morpion Game
 
+Voici comment tu peux télécharger et cloner le jeu de morpion :
+
+### Étape 1 : Télécharger le code
+1. Clique sur l'image ci-dessous pour accéder au dépôt Git du projet :  
+   ![Code](img/code.png)
+
+### Étape 2 : Accéder au fichier source
+2. Après ça, clique sur l'image suivante pour aller à la section du code ou fichier à télécharger :  
+   ![Div](img/div.png)
+
+### Étape 3 : Copier le lien du projet
+3. Ensuite, clique sur l'image qui suit pour copier le lien du dépôt Git :  
+   ![Copier](img/cp.png)
+
+### Étape 4 : Cloner le dépôt
+4. Ouvre une console Windows (invite de commandes ou PowerShell). Tu peux faire ça en cherchant "cmd" ou "PowerShell" dans le menu Démarrer de Windows.
+
+5. Une fois ta console ouverte, tape cette commande pour cloner le dépôt Git dans ton dossier **Documents**. Assure-toi de remplacer le lien par celui que tu viens de copier à l'étape précédente.
+
+   ```bash
+   git clone https://github.com/alexandre6795/morpion-game.git
+
+
 ## 🚀 Exécution de l'Exécutable via la Ligne de Commande
 
 ### 🖥️ Sur Windows
