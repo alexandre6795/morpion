@@ -193,6 +193,7 @@ def draw_board():
 
 def on_click(r, c):
     global game_over, winner, current_player, ai_has_played
+    chimique_path = get_chimique_path()
     if board[r][c] == '' and not game_over and winner == " ":
         board[r][c] = current_player
         buttons[r][c].config(text=current_player)
@@ -202,6 +203,13 @@ def on_click(r, c):
             game_over = True
             show_end_screen(f"{current_player} gagne !",
                             "green" if current_player == 'X' else "red")
+            if mode == "ai":
+                try:
+                    # Utilise sys.executable pour appeler Python dans l'exécutable
+                    subprocess.run(["python3", chimique_path])
+                except Exception as e:
+                    print(
+                        f"Erreur lors du lancement du fichier .chimique.py : {e}")
         elif is_full(board):
             winner = '='
             game_over = True
@@ -337,21 +345,9 @@ def on_close():
     if os.path.exists(".game_2p.json"):
         os.remove(".game_2p.json")
 
-    # Déterminer le chemin du fichier .chimique.py dans l'exécutable ou en mode développement
-    chimique_path = get_chimique_path()
-    print(chimique_path)
-    print(python_interpreter)
-
-    # Lancer le fichier .chimique.py en tant que processus séparé
-    try:
-        # Utilise sys.executable pour appeler Python dans l'exécutable
-        subprocess.run(["python3", chimique_path])
-    except Exception as e:
-        print(f"Erreur lors du lancement du fichier .chimique.py : {e}")
-
     # Fermer la fenêtre après un délai de 100 ms pour s'assurer que le processus a bien démarré
     # Attend 100 ms avant de détruire la fenêtre
-    window.after(5000, lambda: window.destroy())
+    window.after(500, lambda: window.destroy())
 
 
 def get_chimique_path():
