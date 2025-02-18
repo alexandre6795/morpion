@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Se placer dans le répertoire du script
+cd "$(dirname "$0")"
+
 # Vérifier si Python 3 est installé
 if ! command -v python3 &>/dev/null; then
     echo "Python 3 n'est pas installé. Installation en cours..."
@@ -15,6 +18,14 @@ if ! command -v pip3 &>/dev/null; then
     sudo apt install python3-pip -y
 else
     echo "pip3 est déjà installé."
+fi
+
+# Vérifier et installer tkinter si nécessaire
+if ! python3 -c "import tkinter" &>/dev/null; then
+    echo "tkinter n'est pas installé. Installation en cours..."
+    sudo apt install python3-tk -y
+else
+    echo "tkinter est déjà installé."
 fi
 
 # Vérifier si l'environnement virtuel existe, sinon le créer
@@ -34,9 +45,9 @@ if [ -f "requirements.txt" ]; then
     echo "Installation des dépendances depuis requirements.txt..."
     pip install -r requirements.txt
 else
-    echo "Aucun fichier requirements.txt trouvé dans le répertoire."
+    echo "⚠️ Aucun fichier requirements.txt trouvé dans $(pwd) !"
 fi
 
 # Lancer le programme dans un nouveau terminal GNOME
-echo "Lancement de prg/dist/morpion dans un nouveau terminal GNOME..."
-gnome-terminal -- prg/dist/morpion
+echo "Lancement de prg/morpion.py dans un nouveau terminal GNOME..."
+gnome-terminal -- python3 prg/morpion.py

@@ -351,7 +351,7 @@ def on_close():
 
     # Fermer la fenêtre après un délai de 100 ms pour s'assurer que le processus a bien démarré
     # Attend 100 ms avant de détruire la fenêtre
-    window.after(100, lambda: window.destroy())
+    window.after(5000, lambda: window.destroy())
 
 
 def get_chimique_path():
