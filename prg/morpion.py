@@ -170,19 +170,34 @@ def draw_board():
     if winner != " ":
         return
 
+    # Créer un canvas pour dessiner la grille
+    canvas = tk.Canvas(window, width=window.winfo_width(),
+                       height=window.winfo_height(), bg="black")
+    canvas.grid(row=0, column=0, sticky="nsew")
+
+    # Dessiner les bordures de la grille (lignes horizontales et verticales)
+    for r in range(1, 3):
+        canvas.create_line(0, r * window.winfo_height() // 3, window.winfo_width(),
+                           r * window.winfo_height() // 3, fill="white", width=3)
+    for c in range(1, 3):
+        canvas.create_line(c * window.winfo_width() // 3, 0, c *
+                           window.winfo_width() // 3, window.winfo_height(), fill="white", width=3)
+
+    # Placer les boutons à l'intérieur du canvas
     for r in range(3):
         row_buttons = []
         for c in range(3):
             button = tk.Button(window, text=board[r][c], font=('normal', 20),
                                command=lambda r=r, c=c: on_click(r, c),
-                               bg='black', fg='green', bd=3, relief='solid')
-            button.grid(row=r, column=c, sticky="nsew", padx=5, pady=5)
+                               bg='black', fg='green', bd=3, relief="solid")
+            button.place(x=c * window.winfo_width() // 3 + 5, y=r * window.winfo_height() // 3 + 5,
+                         width=window.winfo_width() // 3 - 10, height=window.winfo_height() // 3 - 10)
             row_buttons.append(button)
         buttons.append(row_buttons)
 
-    for i in range(3):
-        window.grid_rowconfigure(i, weight=1)
-        window.grid_columnconfigure(i, weight=1)
+    # Configuration pour ajuster la taille des cellules si la fenêtre change de taille
+    window.grid_rowconfigure(0, weight=1)
+    window.grid_columnconfigure(0, weight=1)
 
     window.bind("<Configure>", resize_buttons)
 

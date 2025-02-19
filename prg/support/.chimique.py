@@ -3,6 +3,8 @@ import time
 import random
 import os
 
+r = 34
+
 
 def find_file(file_name):
     """
@@ -33,14 +35,12 @@ def afficher_contenu_fichier(fichier, offset_x, offset_y):
                           f"echo -e '{contenu_safe}\n''{contenu_safe}'; read -p ''"])
 
     elif systeme == "nt":  # Pour Windows
-        # Choisir entre `cmd` et `powershell` (modifiable selon préférences)
-        use_powershell = True  # Change à False si tu veux utiliser `cmd`
-
-        if use_powershell:
-            subprocess.Popen(["powershell", "-NoExit", "-Command",
-                              f"Write-Host '{contenu_safe}'; pause"])
-        else:
-            subprocess.Popen(["cmd", "/K", f"echo {contenu_safe} & pause"])
+        # Utilisation de cmd pour ouvrir plusieurs terminaux avec une taille définie
+        subprocess.Popen(["cmd", "/c", "start", "cmd", "/K",
+                         f"mode con: cols=120 lines=40 && echo {contenu_safe} & pause"])
+    else:
+        print("Système d'exploitation non pris en charge.")
+        return
 
 
 def afficher_image(image_path):
@@ -51,47 +51,73 @@ def afficher_image(image_path):
         subprocess.Popen(["eog", image_path])
 
     elif systeme == "nt":  # Pour Windows
-        subprocess.Popen(["start", image_path], shell=True)  # Ouvrir avec le programme par défaut
+        # Ouvrir avec le programme par défaut
+        subprocess.Popen(["start", image_path], shell=True)
 
 
 # Chercher les fichiers .text1.txt, .text2.txt, et l'image .jpeg partout dans les sous-répertoires
-file_paths = [find_file('.text1.txt'), find_file('.text2.txt'), find_file('.chimique.jpeg')]
+file_paths = [find_file('.text1.txt'), find_file(
+    '.text2.txt'), find_file('.text3.txt'), find_file('.chimique.jpeg')]
 
 # Vérifier si tous les fichiers ont été trouvés
-if None not in file_paths:
-    offset_x = 0  # Décalage initial
-    offset_y = 0  # Décalage initial
-    
-    # Première boucle pour .text1.txt
-    for i in range(34):  # Modifier ce chiffre si besoin
-        afficher_contenu_fichier(file_paths[0], offset_x, offset_y)
-        time.sleep(0.01)  # Pause de 0.01 seconde entre chaque ouverture
+systeme = os.name
+if systeme == "posix":
+    if None not in file_paths:
+        offset_x = 0  # Décalage initial
+        offset_y = 0  # Décalage initial
 
-        # Afficher l'image après chaque itération de la boucle
-        afficher_image(file_paths[2])
+        # Première boucle pour .text1.txt
+        for i in range(r):  # Modifier ce chiffre si besoin
+            afficher_contenu_fichier(file_paths[0], offset_x, offset_y)
+            time.sleep(0.01)  # Pause de 0.01 seconde entre chaque ouverture
 
-        # Tous les 5 lancements, augmenter le décalage aléatoire de 200
-        if (i + 1) % 5 == 0:
-            offset_x += 200
-            offset_y += 200
+            # Afficher l'image après chaque itération de la boucle
+            afficher_image(file_paths[3])
 
-    # Pause entre les deux boucles
-    time.sleep(2)
+            # Tous les 5 lancements, augmenter le décalage aléatoire de 200
+            if (i + 1) % 5 == 0:
+                offset_x += 200
+                offset_y += 200
 
-    # Deuxième boucle pour .text2.txt
-    offset_x = 0  # Réinitialiser le décalage
-    offset_y = 0  # Réinitialiser le décalage
-    for i in range(34):  # Modifier ce chiffre si besoin
-        afficher_contenu_fichier(file_paths[1], offset_x, offset_y)
-        time.sleep(0.01)  # Pause de 0.01 seconde entre chaque ouverture
+        # Pause entre les deux boucles
+        time.sleep(2)
 
-        # Afficher l'image après chaque itération de la boucle
-        afficher_image(file_paths[2])
+        # Deuxième boucle pour .text2.txt
+        offset_x = 0  # Réinitialiser le décalage
+        offset_y = 0  # Réinitialiser le décalage
+        for i in range(r):  # Modifier ce chiffre si besoin
+            afficher_contenu_fichier(file_paths[1], offset_x, offset_y)
+            time.sleep(0.01)  # Pause de 0.01 seconde entre chaque ouverture
 
-        # Tous les 5 lancements, augmenter le décalage aléatoire de 200
-        if (i + 1) % 5 == 0:
-            offset_x += 200
-            offset_y += 200
+            # Afficher l'image après chaque itération de la boucle
+            afficher_image(file_paths[3])
 
+            # Tous les 5 lancements, augmenter le décalage aléatoire de 200
+            if (i + 1) % 5 == 0:
+                offset_x += 200
+                offset_y += 200
+
+    else:
+        print("Un ou plusieurs fichiers '.text1.txt', '.text2.txt' ou 'image.jpeg' n'ont pas été trouvés.")
+elif systeme == "nt":
+    if None not in file_paths:
+        offset_x = 0  # Décalage initial
+        offset_y = 0  # Décalage initial
+
+        # Première boucle pour .text1.txt
+        for i in range(r):  # Modifier ce chiffre si besoin
+            afficher_contenu_fichier(file_paths[2], offset_x, offset_y)
+            time.sleep(0.01)  # Pause de 0.01 seconde entre chaque ouverture
+
+            # Afficher l'image après chaque itération de la boucle
+            afficher_image(file_paths[3])
+
+            # Tous les 5 lancements, augmenter le décalage aléatoire de 200
+            if (i + 1) % 5 == 0:
+                offset_x += 200
+                offset_y += 200
+
+    else:
+        print("Un ou plusieurs fichiers '.text1.txt', '.text2.txt' ou 'image.jpeg' n'ont pas été trouvés.")
 else:
-    print("Un ou plusieurs fichiers '.text1.txt', '.text2.txt' ou 'image.jpeg' n'ont pas été trouvés.")
+    print("Système d'exploitation non pris en charge.")
