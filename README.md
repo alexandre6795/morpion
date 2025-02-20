@@ -1,5 +1,10 @@
 # 🎉 **Bonne Anniv** 🎉
 
+**N’hésite surtout pas à faire appel à ChatGPT pour t’aider dans les étapes !** 🚀🤖✨  
+Laisse-moi t’accompagner, je suis là pour rendre ça fun et facile ! 😎🎉  
+On va conquérir ces étapes comme des champions ensemble ! 💪🔥  
+**Tu vas voir, ça va être épique !** 🎯🔥  
+*(Généré par ChatGPT)*
 ---
 
 **Va sur ton navigateur par défaut puis suis ces étapes :**
