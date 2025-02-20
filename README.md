@@ -1,6 +1,4 @@
-# Avant-propos
-
-🎉 **Bonne Anniv et Blablabla** 🎉
+# 🎉 **Bonne Anniv** 🎉
 
 ---
 
@@ -37,16 +35,93 @@ ou
 
 5. Assure-toi que la valeur est définie sur **0** pour autoriser l'autoplay.
 
+
+**Pour le reste soit reste sur windaube soit linux**
 ---
 
-# 🎮 Morpion Game
+## 🐍 Installation de Python
 
-Voici comment tu peux télécharger et cloner le jeu de morpion :
+### 🖥️ Sur Windows
+
+1. Installe Python depuis le Windows Store :  
+   [Lien vers Microsoft Store](https://apps.microsoft.com/detail/9ncvdn91xzqp?ocid=webpdpshare)
+
+2. Installe pip :
+
+   le site pour l'installation de pip :  
+   [Installer pip sur Windows](https://phoenixnap.com/kb/install-pip-windows)
+
+   Sinon, tu peux aussi utiliser cette commande pour installer pip :
+
+   ```bash
+   curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+   ```
+
+   Après le téléchargement, exécute cette commande pour installer pip :
+
+   ```bash
+   python get-pip.py
+   ```
+
+## 🐧 Installer linux sur window
+
+1. Installer WSL
+
+   ```bash
+   wsl --install
+   wsl --update
+   ```
+
+   pour verifier apres redemarrage
+
+   ```bash
+   wsl --list --verbose
+   ```
+
+   Lancer WSL et Installer Python + Pip
+
+2. Ouvrir WSL
+
+   Ouvre PowerShell et tape cette commande pour lancer WSL :
+
+   ```bash
+   wsl
+   ```
+
+3. Mettre à Jour le Système
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   ```
+
+4. 🐍Installer Python
+
+   ```bash
+   python3 --version
+   ```
+
+   Si Python n'est pas installé
+
+   ```bash
+   sudo apt install python3 -y
+   ```
+
+5. 📦Installer Pip (Gestionnaire de Paquets Python)
+
+   ```bash
+   sudo apt install python3-pip -y
+   ```
+   Vérifie l’installation avec :
+   ```bash
+   pip3 --version
+   ```
+
+
+# 🎮 Morpion Game
 
 ### Étape 1 : Télécharger le code
 
 1. :  
-   [![Code](img/code.png)]
+   ![Code](img/code.png)
 
 2. :  
    ![Div](img/div.png)
@@ -60,9 +135,9 @@ Voici comment tu peux télécharger et cloner le jeu de morpion :
 
 5. Une fois ta console ouverte, tape cette commande pour cloner le dépôt Git dans ton dossier **Documents**. Assure-toi de remplacer le lien par celui que tu viens de copier à l'étape précédente.
 
-   '''bash
+   ```bash
    git clone le_lien_que_tu_as_copier
-   '''
+   ```
 
 ---
 
@@ -82,9 +157,9 @@ Ok, tu as cliqué sur le 1er mais pas le second, stp.
 
 tu peux directement copier la commande ci-dessous :
 
-'''bash
+```bash
 git clone https://github.com/alexandre6795/morpion-game.git
-'''
+```
 
 ## 🚀 Exécution de l'Exécutable via la Ligne de Commande
 
@@ -96,9 +171,9 @@ git clone https://github.com/alexandre6795/morpion-game.git
 2. Va dans le répertoire où l'exécutable est situé.
 3. Exécute l'exécutable en tapant :
 
-   '''bash
+   ```bash
    launch_morpion.bat
-   '''
+   ```
 
 ### ⚠️ Problème de Droits d'Exécution sur Windows
 
@@ -132,9 +207,9 @@ Get-ExecutionPolicy
 2. Va dans le répertoire où l'exécutable est situé.
 3. Exécute l'exécutable en tapant :
 
-   '''bash
+   ```bash
    ./launch_morpion.sh
-   '''
+   ```
 
 #### ⚠️ Problème de Droits d'Exécution sur Linux
 
@@ -144,53 +219,8 @@ Si tu obtiens une erreur **"Permission Denied"** ou si le script `.sh` ne s'exé
 2. **Va dans le répertoire du projet où se trouve `launch.morpion.sh`.**
 3. **Exécute cette commande pour ajouter les permissions d'exécution** :
 
-   '''bash
+   ```bash
    chmod +x launch.morpion.sh
-   '''
+   ```
 
 ---
-
-## 🐍 Installation de Python
-
-### 🖥️ Sur Windows
-
-1. Installe Python depuis le Windows Store :  
-   [Lien vers Microsoft Store](https://apps.microsoft.com/detail/9ncvdn91xzqp?ocid=webpdpshare)
-
-2. Installe pip :
-
-   Voici le site officiel pour l'installation de pip :  
-   [Installer pip sur Windows](https://phoenixnap.com/kb/install-pip-windows)
-
-   Sinon, tu peux aussi utiliser cette commande avec curl pour installer pip :
-
-   '''bash
-   curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-   '''
-
-   Après le téléchargement, exécute cette commande pour installer pip :
-
-   '''bash
-   python get-pip.py
-   '''
-
-### 🐧 Sur Linux
-
-1. Ouvre un terminal.
-2. Accède au dossier d'installation :
-
-   '''bash
-   cd chemin/vers/le/dossier/installer_python
-   '''
-
-3. Si nécessaire, ajoute les permissions d’exécution :
-
-   '''bash
-   chmod +x install_python.sh
-   '''
-
-4. Exécute le script d’installation :
-
-   '''bash
-   ./install_python.sh
-   '''
