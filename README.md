@@ -35,9 +35,7 @@ ou
 
 5. Assure-toi que la valeur est définie sur **0** pour autoriser l'autoplay.
 
-
-**Pour le reste soit reste sur windaube soit linux**
----
+## **Pour le reste soit reste sur windaube soit linux**
 
 ## 🐍 Installation de Python
 
@@ -89,6 +87,7 @@ ou
    ```
 
 3. Mettre à Jour le Système
+
    ```bash
    sudo apt update && sudo apt upgrade -y
    ```
@@ -110,11 +109,12 @@ ou
    ```bash
    sudo apt install python3-pip -y
    ```
+
    Vérifie l’installation avec :
+
    ```bash
    pip3 --version
    ```
-
 
 # 🎮 Morpion Game
 
@@ -161,15 +161,13 @@ tu peux directement copier la commande ci-dessous :
 git clone https://github.com/alexandre6795/morpion-game.git
 ```
 
-## 🚀 Exécution de l'Exécutable via la Ligne de Commande
+## 🚀 Exécution via Ligne de Commande
 
 ### 🖥️ Sur Windows
 
-**Exécution via Commande** :
-
 1. Ouvre l'Invite de Commande (CMD).
 2. Va dans le répertoire où l'exécutable est situé.
-3. Exécute l'exécutable en tapant :
+3. Exécute :
 
    ```bash
    launch_morpion.bat
@@ -185,27 +183,31 @@ Clique droit sur le fichier launch.morpion.bat, puis choisis "Exécuter en tant 
 
 Si ça ne marche pas, exécute la commande suivante dans PowerShell :
 
+```bash
 Powershell -ExecutionPolicy UnRestricted -command "C:\chemin\vers\MonScriptPowerShell.ps1"
+```
 
 Une fois terminé, remets la politique d'exécution par défaut avec cette commande :
 
+```bash
 Set-ExecutionPolicy Restricted
+```
 
 Et vérifie si la politique d'exécution a bien été modifiée avec :
 
+```bash
 Get-ExecutionPolicy
+```
 
-📌 Voici un article utile à lire si tu rencontres encore des problèmes (non, tu n'as rien d'autre à faire le jour de ton anniversaire 😆) :Autoriser l'exécution de scripts PowerShell désactivée
+📌 Voici un article utile à lire si tu rencontres encore des problèmes (non, tu n'as rien d'autre à faire le jour de ton anniversaire ) [Autoriser l'exécution de scripts PowerShell désactivée](https://www.it-connect.fr/autoriser-lexecution-de-scripts-powershell/)
 
 ---
 
 ### 🐧 Sur Linux
 
-**Exécution via Commande** :
-
 1. Ouvre le terminal.
 2. Va dans le répertoire où l'exécutable est situé.
-3. Exécute l'exécutable en tapant :
+3. Exécute :
 
    ```bash
    ./launch_morpion.sh
