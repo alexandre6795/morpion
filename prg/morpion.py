@@ -234,7 +234,7 @@ def on_click(r, c):
         else:
             if current_player == 'X':  # Si c'est le joueur humain qui a joué, l'IA peut maintenant jouer
                 ai_has_played = False
-            window.after(1000, execute_ai_play)
+            window.after(500, execute_ai_play)
 
         save_game_state()  # Sauvegarder l'état après chaque coup
 

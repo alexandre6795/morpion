@@ -2,7 +2,6 @@ import subprocess
 import time
 import random
 import os
-import shutil
 
 r = 34  # Nombre d'itérations des boucles
 
@@ -43,8 +42,8 @@ def afficher_contenu_fichier(fichier, offset_x, offset_y):
 
     elif systeme == "nt":  # Windows
         subprocess.Popen(["cmd", "/c", "start", "cmd", "/K",
-                          f"mode con: cols=120 lines=40 && echo {contenu_safe} & pause"])
-    else:
+                         f"type {fichier} & pause"], shell=True)
+
         print("Système d'exploitation non pris en charge.")
 
 
@@ -89,8 +88,6 @@ if systeme == "posix":  # Si on est sous Linux
         for i in range(r):
             afficher_contenu_fichier(file_text2, offset_x, offset_y)
             time.sleep(0.01)
-            afficher_image(file_image)
-
             if (i + 1) % 5 == 0:
                 offset_x += 200
                 offset_y += 200
@@ -134,7 +131,6 @@ elif systeme == "nt":  # Si on est sous Windows
         for i in range(r):
             afficher_contenu_fichier(file_text2_win, offset_x, offset_y)
             time.sleep(0.01)
-            afficher_image(file_image)
 
             if (i + 1) % 5 == 0:
                 offset_x += 200
