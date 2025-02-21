@@ -1,12 +1,13 @@
 # 🎉 **Bonne Anniv** 🎉
 
-**N’hésite surtout pas à faire appel à ChatGPT pour t’aider dans les étapes !** 
-Merci de compter sur moi, je suis là pour toi ! 😊🚀
-🚀🤖✨  
-Laisse-moi t’accompagner, je suis là pour rendre ça fun et facile ! 😎🎉  
-On va conquérir ces étapes comme des champions ensemble ! 💪🔥  
-**Tu vas voir, ça va être épique !** 🎯🔥  
-*(Généré par ChatGPT)*
+**N’hésite surtout pas à faire appel à ChatGPT pour t’aider dans les étapes !**
+
+   Merci de compter sur moi, je suis là pour toi ! 😊🚀
+   🚀🤖✨  
+   Laisse-moi t’accompagner, je suis là pour rendre ça fun et facile ! 😎🎉  
+   On va conquérir ces étapes comme des champions ensemble ! 💪🔥  
+   **Tu vas voir, ça va être épique !** 🎯🔥  
+   *(Généré par ChatGPT)*
 ---
 
 **Va sur Firefox puis suis ces étapes :**
@@ -146,7 +147,7 @@ Ok, tu as cliqué sur le 1er mais pas le second, stp.
 tu peux directement copier la commande ci-dessous :
 
 ```bash
-git clone https://github.com/alexandre6795/morpion-game.git
+   git clone https://github.com/alexandre6795/morpion.git
 ```
 
 ## 🚀 Exécution via Ligne de Commande
