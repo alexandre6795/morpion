@@ -1,44 +1,27 @@
 # 🎉 **Bonne Anniv** 🎉
 
-**N’hésite surtout pas à faire appel à ChatGPT pour t’aider dans les étapes !** 🚀🤖✨  
+**N’hésite surtout pas à faire appel à ChatGPT pour t’aider dans les étapes !** 
+Merci de compter sur moi, je suis là pour toi ! 😊🚀
+🚀🤖✨  
 Laisse-moi t’accompagner, je suis là pour rendre ça fun et facile ! 😎🎉  
 On va conquérir ces étapes comme des champions ensemble ! 💪🔥  
 **Tu vas voir, ça va être épique !** 🎯🔥  
 *(Généré par ChatGPT)*
 ---
 
-**Va sur ton navigateur par défaut puis suis ces étapes :**
+**Va sur Firefox puis suis ces étapes :**
 
----
 
-### 1. **Google Chrome**
-
-1. Ouvre **Google Chrome**.
-2. Tape `chrome://settings/content/autoplay` dans la barre d'adresse et appuie sur **Entrée**.
-3. Dans le menu qui s'ouvre, vérifie si **Autoplay** est activé. Si ce n'est pas le cas, active-le pour autoriser les vidéos à se lancer automatiquement.
-
-ou
-
-1. Va dans **Paramètres** (les trois points dans le coin supérieur droit > **Paramètres**).
-2. Descends et clique sur **Paramètres avancés**.
-3. Sous la section **Confidentialité et sécurité**, clique sur **Paramètres de contenu**.
-4. Dans la section **Autoplay**, assure-toi que l'option **Autoriser** est activée.
-
----
-
-### 2. **Mozilla Firefox**
-
-1. Ouvre **Firefox**.
-2. Tape `about:config` dans la barre d'adresse et appuie sur **Entrée**.
-3. Clique sur le bouton **Accepter le risque et continuer**.
-4. Recherche la préférence `media.autoplay.default` :
+1. Tape `about:config` dans la barre d'adresse et appuie sur **Entrée**.
+2. Clique sur le bouton **Accepter le risque et continuer**.
+3. Recherche la préférence `media.autoplay.default` :
 
    - Double-clique dessus et change sa valeur :
      - **0** : Autoriser les vidéos à se lancer automatiquement.
      - **1** : Demander avant de lancer la vidéo.
      - **2** : Bloquer l'autoplay des vidéos.
 
-5. Assure-toi que la valeur est définie sur **0** pour autoriser l'autoplay.
+4. Assure-toi que la valeur est définie sur **0** pour autoriser l'autoplay.
 
 ## **Pour le reste soit reste sur windaube soit linux**
 
